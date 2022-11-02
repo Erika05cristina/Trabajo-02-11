@@ -14,7 +14,7 @@ public class Mascota {
     private String raza;
     private int edad;
     Dueno propietario;
-    Atencion cita;
+
 
     public String getNombre() {
         return nombre;
@@ -48,27 +48,20 @@ public class Mascota {
         this.propietario = propietario;
     }
 
-    public Atencion getCita() {
-        return cita;
-    }
+   
 
-    public void setCita(Atencion cita) {
-        this.cita = cita;
-    }
-
-    public Mascota(String nombre, String raza, int edad, Dueno propietario, Atencion cita) {
+    public Mascota(String nombre, String raza, int edad, Dueno propietario) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
         this.propietario = propietario;
-        this.cita = cita;
+       
     }
 
     public void mostrarInfo() {
         System.out.println("El nombre de la mascota es " + nombre + " es de raza "
                 + raza + " tiene " + edad + " años.\n" + "Su dueño es "
-                + this.getPropietario().getNombre() + " y fue atendido por el doctor "
-                + this.getCita().getNombreVeterinario());
+                + this.getPropietario().getNombre());
     }
 
 }

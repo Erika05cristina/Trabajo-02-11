@@ -9,9 +9,11 @@ package com.mycompany.trabajo_02_11;
  * @author Kristina
  */
 public class Atencion {
+
     private String horario;
     private String nombreVeterinario;
     private double costo;
+    Mascota mascota;
 
     public String getHorario() {
         return horario;
@@ -37,15 +39,25 @@ public class Atencion {
         this.costo = costo;
     }
 
-    public Atencion(String horario, String nombreVeterinario, double costo) {
+    public Mascota getMascota() {
+        return mascota;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+    }
+
+    public Atencion(String horario, String nombreVeterinario, double costo, Mascota mascota) {
         this.horario = horario;
         this.nombreVeterinario = nombreVeterinario;
         this.costo = costo;
+        this.mascota = mascota;
     }
-    
-    public void mostrarInfo(){
-        System.out.println("El horario de atencion es de "+ horario + "\nEl nombre del veterinario es "
-                + nombreVeterinario + "\nEl costo de la cita es $" + costo);
+
+    public void mostrarInfo() {
+        System.out.println("El horario de atencion es de " + horario + "\nEl nombre del veterinario es "
+                + nombreVeterinario + "\nEl costo de la cita es $" + costo + " y se atendio a "
+                + this.getMascota().getNombre());
     }
-    
+
 }
